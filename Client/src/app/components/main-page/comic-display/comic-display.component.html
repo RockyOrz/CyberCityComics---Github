@@ -1,0 +1,16 @@
+<div class="comic-display">
+  <div class="comic-img">
+    <img
+      src="{{ comic_info.comic_image_url }}"
+      alt="{{ comic_info.comic_alt }}"
+    />
+  </div>
+  <div class="comic-date">
+    <p> {{ comic_info.comic_view }} view</p>
+    <p>
+      Created: {{ comic_info.comic_year }}/{{ comic_info.comic_month }}/{{
+        comic_info.comic_day
+      }}
+    </p>
+  </div>
+</div>

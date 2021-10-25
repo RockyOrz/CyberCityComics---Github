@@ -1,0 +1,82 @@
+<div class="main">
+  <div class="header shadow-lg">
+    <div class="title">
+      <p>Cyber City Comics</p>
+    </div>
+    <div class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="./../../../assets/carousel_pic/erik-mclean-27kCu7bXGEI-unsplash.jpg"
+            class="header-img"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./../../../assets/carousel_pic/erik-mclean-8SeJUmfahu0-unsplash.jpg"
+            class="header-img"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="./../../../assets/carousel_pic/erik-mclean-0_wXoeCDry0-unsplash.jpg"
+            class="header-img"
+            alt="..."
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="btns">
+        <button type="button" class="button" (click)="getPreviousComic()">
+          <fa-icon [icon]="faArrowLeft"></fa-icon>
+        </button>
+        <button type="button" class="button" (click)="getRandomComic()">
+          <fa-icon [icon]="faRandom"></fa-icon>
+        </button>
+        <button type="button" class="button" (click)="getNextComic()">
+          <fa-icon [icon]="faArrowRight"></fa-icon>
+        </button>
+      </div>
+      <div class="row">
+        <div class="comic-title">
+          <p>
+            {{ comic_info.comic_number }} -
+            <span id="title-text">{{ comic_info.comic_title }}</span>
+          </p>
+        </div>
+      </div>
+      <div class="split-line"></div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <app-comic-display
+          [comic_info]="getComic()"
+          class="comic-display"
+        ></app-comic-display>
+      </div>
+      <div class="col col-transcript" *ngIf="comic_info.comic_transcript">
+        <div
+          class="scroll shadow-sm"
+          data-bs-spy="scroll"
+          data-bs-offset="0"
+          tabindex="0"
+        >
+          <div class="transcript-header">
+            <p>{{ comic_info.comic_alt }}</p>
+          </div>
+          <div class="split-line"></div>
+          <div class="comic_transcript">
+            <p id="transcript-text">{{ comic_info.comic_transcript }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
