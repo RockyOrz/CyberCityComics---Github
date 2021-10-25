@@ -5,7 +5,7 @@
       alt="{{ comic_info.comic_alt }}"
     />
   </div>
-  <div class="comic-date">
+  <div class="comic-date" *ngIf="comic_info.comic_number != 0">
     <p> {{ comic_info.comic_view }} view</p>
     <p>
       Created: {{ comic_info.comic_year }}/{{ comic_info.comic_month }}/{{
